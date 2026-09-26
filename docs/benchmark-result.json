@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-09-26T08:43:40.068Z",
+  "runtime": "v24.19.0",
+  "platform": "win32",
+  "arch": "x64",
+  "cpu": "Intel(R) Core(TM) Ultra 7 255H",
+  "cpuCount": 16,
+  "memoryGiB": 31.49,
+  "sqlite": "3.53.3",
+  "cards": 2000,
+  "products": 4,
+  "versions": 4,
+  "warmup": 100,
+  "iterations": 1000,
+  "concurrency": 1,
+  "units": "ms",
+  "coldLoadMs": 95.09200000000001,
+  "retrieval": {
+    "p50": 1.698500000000081,
+    "p95": 3.885699999999929
+  },
+  "routeCatalogRetrieval": {
+    "p50": 1.840099999999893,
+    "p95": 4.219799999999964
+  },
+  "scope": "Synthetic fictional data; warm in-memory lexical index and SQLite; excludes HTTP, cold database opening and provider network. No production latency SLA."
+}

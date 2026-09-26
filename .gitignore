@@ -1,0 +1,26 @@
+# All operational data is local; public data directories are intentionally empty.
+data/**
+!data/catalog/
+!data/knowledge/
+!data/catalog/.gitkeep
+!data/knowledge/.gitkeep
+.env
+.env.*
+!.env.example
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+*.log
+logs/
+export/
+exports/
+Export/
+private/
+secrets/
+*.pem
+*.key
+node_modules/
+coverage/
+tmp/
+.DS_Store

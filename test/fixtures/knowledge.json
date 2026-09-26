@@ -1,0 +1,144 @@
+{
+  "fictional": true,
+  "notice": "全部为虚构测试证据，不构成真实保存建议或商家政策。",
+  "cards": [
+    {
+      "id": "tomato-storage",
+      "productId": "tomato",
+      "title": "虚构番茄保存 FAQ",
+      "keywords": [
+        "番茄",
+        "西红柿",
+        "保存",
+        "冷藏"
+      ],
+      "content": "【虚构测试文本】番茄保存示例：放入测试容器 A。",
+      "kind": "knowledge",
+      "facet": "storage",
+      "confirmed": true,
+      "validFrom": "2030-01-01",
+      "validTo": "2031-01-01",
+      "source": {
+        "id": "fictional-storage-a",
+        "title": "虚构保存说明 A"
+      }
+    },
+    {
+      "id": "tomato-storage-extra",
+      "productId": "tomato",
+      "title": "虚构番茄保存补充",
+      "keywords": [
+        "番茄",
+        "西红柿",
+        "保存"
+      ],
+      "content": "【虚构测试文本】番茄保存示例：记录测试标签 A。",
+      "kind": "knowledge",
+      "facet": "storage",
+      "confirmed": true,
+      "validFrom": "2030-01-01",
+      "validTo": "2031-01-01",
+      "source": {
+        "id": "fictional-storage-a-extra",
+        "title": "虚构保存补充 A"
+      }
+    },
+    {
+      "id": "cabbage-storage",
+      "productId": "cabbage",
+      "title": "虚构白菜保存 FAQ",
+      "keywords": [
+        "白菜",
+        "保存"
+      ],
+      "content": "【虚构测试文本】白菜保存示例：放入测试容器 B。",
+      "kind": "knowledge",
+      "facet": "storage",
+      "confirmed": true,
+      "validFrom": "2030-01-01",
+      "validTo": "2031-01-01",
+      "source": {
+        "id": "fictional-storage-b",
+        "title": "虚构保存说明 B"
+      }
+    },
+    {
+      "id": "tomato-return",
+      "productId": "tomato",
+      "title": "虚构番茄退货政策",
+      "keywords": [
+        "番茄",
+        "西红柿",
+        "退货",
+        "政策"
+      ],
+      "content": "【虚构测试政策】番茄退货需测试条件 A。",
+      "kind": "policy",
+      "facet": "return",
+      "confirmed": true,
+      "validFrom": "2030-01-01",
+      "validTo": "2031-01-01",
+      "source": {
+        "id": "fictional-policy-a",
+        "title": "虚构确认政策 A"
+      }
+    },
+    {
+      "id": "cabbage-return",
+      "productId": "cabbage",
+      "title": "虚构白菜退货政策",
+      "keywords": [
+        "白菜",
+        "退货"
+      ],
+      "content": "【虚构未确认政策】不可用于回答。",
+      "kind": "policy",
+      "facet": "return",
+      "confirmed": false,
+      "validFrom": "2030-01-01",
+      "validTo": "2031-01-01",
+      "source": {
+        "id": "fictional-policy-b-draft",
+        "title": "虚构待确认政策 B"
+      }
+    },
+    {
+      "id": "tomato-old-policy",
+      "productId": "tomato",
+      "title": "虚构番茄过期配送",
+      "keywords": [
+        "番茄",
+        "配送"
+      ],
+      "content": "【虚构过期政策】不可用于回答。",
+      "kind": "policy",
+      "facet": "delivery",
+      "confirmed": true,
+      "validFrom": "2029-01-01",
+      "validTo": "2030-01-01",
+      "source": {
+        "id": "fictional-policy-expired",
+        "title": "虚构过期配送政策"
+      }
+    },
+    {
+      "id": "global-storage",
+      "productId": null,
+      "title": "虚构蔬菜保存通用 FAQ",
+      "keywords": [
+        "蔬菜",
+        "保存"
+      ],
+      "content": "【虚构通用测试文本】保存记录使用测试标签。",
+      "kind": "knowledge",
+      "facet": "storage",
+      "confirmed": true,
+      "validFrom": "2030-01-01",
+      "validTo": "2031-01-01",
+      "source": {
+        "id": "fictional-global",
+        "title": "虚构通用说明"
+      }
+    }
+  ]
+}

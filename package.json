@@ -1,0 +1,16 @@
+{
+  "name": "agricultural-ecommerce-rag",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Independent agricultural consultation technical prototype",
+  "license": "GPL-3.0-only",
+  "engines": { "node": ">=24.0.0 <25" },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --require ./test/offline-guard.cjs --test test/*.test.js",
+    "check": "node scripts/check.js",
+    "import": "node scripts/import.js",
+    "benchmark": "node scripts/benchmark.js",
+    "scan": "node scripts/scan-staged.js"
+  }
+}

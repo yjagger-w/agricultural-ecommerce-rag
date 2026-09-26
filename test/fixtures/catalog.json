@@ -1,0 +1,16 @@
+{
+  "fictional": true,
+  "notice": "全部为虚构测试数据，不代表任何公司商品、价格或可售状态。",
+  "products": [
+    { "id": "tomato", "name": "测试番茄", "aliases": ["番茄", "西红柿", "tomato"] },
+    { "id": "cabbage", "name": "测试白菜", "aliases": ["白菜"] },
+    { "id": "carrot", "name": "测试胡萝卜", "aliases": ["胡萝卜"] },
+    { "id": "yellow-tomato", "name": "测试黄番茄", "aliases": ["黄番茄"] }
+  ],
+  "versions": [
+    { "productId": "tomato", "version": "v1", "specification": "虚构测试装 250g", "priceMinor": 800, "currency": "CNY", "validFrom": "2030-01-01", "validTo": "2030-06-01", "saleable": true, "source": { "id": "fictional-catalog-v1", "title": "虚构目录旧版" } },
+    { "productId": "tomato", "version": "v2", "specification": "虚构测试装 500g", "priceMinor": 1200, "currency": "CNY", "validFrom": "2030-06-01", "validTo": "2031-01-01", "saleable": true, "source": { "id": "fictional-catalog-v2", "title": "虚构目录新版" } },
+    { "productId": "cabbage", "version": "v1", "specification": "虚构测试装 1kg", "priceMinor": 1500, "currency": "CNY", "validFrom": "2030-01-01", "validTo": "2031-01-01", "saleable": false, "source": { "id": "fictional-cabbage", "title": "虚构不可售目录" } },
+    { "productId": "carrot", "version": "v1", "specification": "虚构测试装 300g", "priceMinor": 900, "currency": "CNY", "validFrom": "2029-01-01", "validTo": "2030-01-01", "saleable": true, "source": { "id": "fictional-carrot", "title": "虚构过期目录" } }
+  ]
+}
