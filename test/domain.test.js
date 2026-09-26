@@ -78,6 +78,23 @@ test('ambiguous multi-product mixed clause asks for clarification without leakin
   assert.match(r.answer, /对应关系不明确/); assert.doesNotMatch(r.answer, /测试条件|测试容器/);
   assert.equal(r.metrics.providerCalls, 0);
 });
+test('an unknown product in a later clause never inherits the known product evidence', async t => {
+  let calls = 0;
+  const { service } = harness(t, { provider: { streamChat() { calls++; throw Error('must not call'); } } });
+  const r = await service.answer('番茄多少钱，菠菜冷藏', { asOf });
+  assert.match(r.answer, /12\.00 CNY/); assert.match(r.answer, /商品未识别/);
+  assert.deepEqual(r.evidence, []); assert.doesNotMatch(r.answer, /fictional-storage|测试容器/); assert.equal(calls, 0);
+});
+test('a subject-free single-product follow-up retains its scope', async t => {
+  const { service } = harness(t);
+  const r = await service.answer('番茄多少钱，怎么保存', { asOf });
+  assert.equal(r.route, 'mixed'); assert.equal(r.evidence[0].productId, 'tomato'); assert.match(r.answer, /fictional-storage-a/);
+});
+test('a follow-up with several possible products asks for an explicit subject', async t => {
+  const r = await harness(t).service.answer('番茄多少钱，白菜有货吗，怎么保存', { asOf });
+  assert.match(r.answer, /归属不明确/); assert.deepEqual(r.evidence, []);
+  assert.doesNotMatch(r.answer, /fictional-storage/);
+});
 test('empty and missing data directories start and answer without a model call', async t => {
   const { service, catalog, dir } = harness(t, { empty: true, provider: { streamChat() { throw Error('must not call'); } } });
   fs.rmdirSync(path.join(dir, 'knowledge'));

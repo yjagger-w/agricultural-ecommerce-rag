@@ -1,10 +1,20 @@
 'use strict';
+function isScopedFollowup(clause) {
+  const text = clause.trim().replace(/\s+/g, ' ');
+  // Only complete, subject-free question forms can inherit a named product.
+  // Unknown subject words (e.g. a product absent from the catalog) fail closed.
+  return /^(?:(?:请问|那|它|这个商品|该商品|这款商品)\s*)?(?:(?:怎么|如何|怎样)?(?:保存|储存|冷藏|保鲜)|(?:可以|能否|是否)?(?:退货|退款|退换)|有货|在售|停售|可售|价格|多少钱|什么规格|规格|重量|运费|配送|政策)(?:吗|呢|么|如何|怎样)?$/.test(text)
+    || /^(?:and\s+)?(?:how (?:do i |to )?(?:store|return) (?:it|this product)|(?:is it )?available|what (?:is |about )?(?:the )?(?:price|cost|specifications|return policy|delivery policy))$/i.test(text);
+}
 function route(question, catalog) {
   const clauses = question.split(/[，,。；;？?\n]+/).filter(s => s.trim());
   const all = catalog.identify(question), facts = new Map(), scopes = new Map(), clarifications = [];
   for (const clause of clauses) {
     const explicit = catalog.identify(clause);
-    // Only unambiguous single-product questions may carry scope into a clause.
+    if (!explicit.length && all.length && (all.length !== 1 || !isScopedFollowup(clause))) {
+      clarifications.push('该分句的商品未识别或归属不明确，请明确每个商品名称后再咨询。');
+      continue;
+    }
     const products = explicit.length ? explicit : all.length === 1 ? all : [];
     const catalogIntent = /价格|多少钱|规格|重量|可售|在售|有货|停售|price|cost|spec|available/i.test(clause);
     const facets = [];
@@ -24,7 +34,8 @@ function route(question, catalog) {
     for (const facet of facets) for (const p of products.length ? products : [{ id: null, name: '通用资料' }]) {
       const key = (p.id || 'global') + ':' + facet;
       const existing = scopes.get(key);
-      scopes.set(key, { key, productId: p.id, productName: p.name, facet, query: existing ? existing.query + ' ' + clause : clause });
+      const scopedQuery = !explicit.length && p.id ? p.name + ' ' + clause : clause;
+      scopes.set(key, { key, productId: p.id, productName: p.name, facet, query: existing ? existing.query + ' ' + scopedQuery : scopedQuery });
     }
   }
   return { products: all, facts: [...facts.values()], scopes: [...scopes.values()], clarifications,
