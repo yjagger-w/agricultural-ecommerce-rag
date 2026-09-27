@@ -15,6 +15,7 @@
 ```sh
 npm test
 npm run check
+npm run evaluate
 npm start
 ```
 
@@ -59,6 +60,6 @@ npm start
 
 ## 验证及限制
 
-离线测试使用 provider/fetch stub，禁止外部 HTTP 和 fetch，仅 HTTP 集成测试使用本机回环连接。验证结果及独立基准见 [验收记录](docs/validation.md)，简历措辞见 [项目描述](docs/resume-description.md)。
+离线测试使用 provider/fetch stub，禁止外部 HTTP 和 fetch，仅 HTTP 集成测试使用本机回环连接。24 个虚构咨询案例的评估方法、23/24 基线及英文语料缺口见 [合成案例评估](docs/domain-evaluation.md)；这些案例不能代表真实领域准确率。验证结果及独立基准见 [验收记录](docs/validation.md)，简历措辞见 [项目描述](docs/resume-description.md)。
 
 本项目采用 GPL-3.0-only，修改与第三方作者声明见 [许可声明](THIRD_PARTY_NOTICES.md)。无担保；发布源码时需保留 LICENSE 和作者声明。

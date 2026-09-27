@@ -3,7 +3,7 @@ function isScopedFollowup(clause) {
   const text = clause.trim().replace(/\s+/g, ' ');
   // Only complete, subject-free question forms can inherit a named product.
   // Unknown subject words (e.g. a product absent from the catalog) fail closed.
-  return /^(?:(?:请问|那|它|这个商品|该商品|这款商品)\s*)?(?:(?:怎么|如何|怎样)?(?:保存|储存|冷藏|保鲜)|(?:可以|能否|是否)?(?:退货|退款|退换)|有货|在售|停售|可售|价格|多少钱|什么规格|规格|重量|运费|配送|政策)(?:吗|呢|么|如何|怎样)?$/.test(text)
+  return /^(?:(?:请问|那|它|这个商品|该商品|这款商品)\s*)?(?:(?:怎么|如何|怎样)?(?:保存|储存|冷藏|保鲜)|(?:可以|能否|能|是否)?(?:退货|退款|退换)|有货|在售|停售|可售|价格|多少钱|什么规格|规格|重量|运费|配送|政策)(?:吗|呢|么|如何|怎样)?$/.test(text)
     || /^(?:and\s+)?(?:how (?:do i |to )?(?:store|return) (?:it|this product)|(?:is it )?available|what (?:is |about )?(?:the )?(?:price|cost|specifications|return policy|delivery policy))$/i.test(text);
 }
 function route(question, catalog) {
