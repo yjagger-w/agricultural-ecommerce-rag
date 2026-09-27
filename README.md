@@ -15,6 +15,7 @@
 ```sh
 npm test
 npm run check
+npm run evaluate
 npm start
 ```
 
@@ -59,7 +60,7 @@ npm start
 
 ## 验证及限制
 
-离线测试使用 provider/fetch stub，禁止外部 HTTP 和 fetch，仅 HTTP 集成测试使用本机回环连接。验证结果及独立基准见 [验收记录](docs/validation.md)，简历措辞见 [项目描述](docs/resume-description.md)。
+离线测试使用 provider/fetch stub，禁止外部 HTTP 和 fetch，仅 HTTP 集成测试使用本机回环连接。24 个虚构咨询案例的评估方法、23/24 基线及英文语料缺口见 [合成案例评估](docs/domain-evaluation.md)；这些案例不能代表真实领域准确率。验证结果及独立基准见 [验收记录](docs/validation.md)，简历措辞见 [项目描述](docs/resume-description.md)。
 
 已移除桌面、录屏、音频、转写、个人 Profile、时间线、快捷键与窗口功能。本版未提供演示页面，以 HTTP API 为最小接口。敏感字段与路径检测是有限的技术防护，不能替代业务资料授权确认、人工脱敏或正式隐私审计。
 

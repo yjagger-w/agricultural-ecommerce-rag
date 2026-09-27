@@ -1,0 +1,30 @@
+{
+  "fictional": true,
+  "notice": "All questions and expected outcomes use fictional test fixtures, not real customer or agricultural advice.",
+  "cases": [
+    {"id":"catalog-old-price","category":"catalog","question":"番茄多少钱","asOf":"2030-05-31","route":"catalog","facts":{"tomato":"available"},"sources":[],"answerIncludes":["8.00 CNY"],"answerExcludes":["12.00 CNY"]},
+    {"id":"catalog-boundary-price","category":"catalog","question":"西红柿多少钱","asOf":"2030-06-01","route":"catalog","facts":{"tomato":"available"},"sources":[],"answerIncludes":["12.00 CNY","虚构测试装 500g"],"answerExcludes":["8.00 CNY"]},
+    {"id":"catalog-expired-price","category":"catalog","question":"番茄价格","asOf":"2031-01-01","route":"catalog","facts":{"tomato":"expired"},"sources":[],"answerIncludes":["价格资料已过期"],"answerExcludes":["12.00 CNY"]},
+    {"id":"catalog-unsaleable","category":"catalog","question":"白菜有货吗","asOf":"2030-06-01","route":"catalog","facts":{"cabbage":"unavailable"},"sources":[],"answerIncludes":["当前不可售"],"answerExcludes":["15.00 CNY"]},
+    {"id":"catalog-expired-other","category":"catalog","question":"胡萝卜多少钱","asOf":"2030-06-01","route":"catalog","facts":{"carrot":"expired"},"sources":[],"answerIncludes":["价格资料已过期"],"answerExcludes":["9.00 CNY"]},
+    {"id":"catalog-no-version","category":"catalog","question":"黄番茄多少钱","asOf":"2030-06-01","route":"catalog","facts":{"yellow-tomato":"missing"},"sources":[],"answerIncludes":["暂无生效目录版本"],"answerExcludes":["12.00 CNY"]},
+    {"id":"catalog-unknown","category":"catalog","question":"菠菜多少钱","asOf":"2030-06-01","route":"catalog","facts":{},"sources":[],"answerIncludes":["资料不足"],"answerExcludes":["12.00 CNY"]},
+    {"id":"storage-tomato","category":"knowledge","question":"番茄怎么保存","asOf":"2030-06-01","route":"knowledge","facts":{},"sources":["fictional-storage-a","fictional-storage-a-extra"],"answerExcludes":["测试容器 B","fictional-global"]},
+    {"id":"storage-alias","category":"knowledge","question":"西红柿冷藏","asOf":"2030-06-01","route":"knowledge","facts":{},"sources":["fictional-storage-a","fictional-storage-a-extra"],"answerExcludes":["测试容器 B"]},
+    {"id":"storage-cabbage","category":"knowledge","question":"白菜怎么保存","asOf":"2030-06-01","route":"knowledge","facts":{},"sources":["fictional-storage-b"],"answerExcludes":["测试容器 A","fictional-storage-a"]},
+    {"id":"storage-global","category":"knowledge","question":"蔬菜怎么保存","asOf":"2030-06-01","route":"knowledge","facts":{},"sources":["fictional-global"],"answerExcludes":["测试容器 A","测试容器 B"]},
+    {"id":"storage-unknown-subject","category":"isolation","question":"菠菜怎么保存","asOf":"2030-06-01","route":"knowledge","facts":{},"sources":[],"answerIncludes":["资料不足"],"answerExcludes":["fictional-global","fictional-storage-a","fictional-storage-b"]},
+    {"id":"return-tomato","category":"policy","question":"番茄退货政策","asOf":"2030-06-01","route":"knowledge","facts":{},"sources":["fictional-policy-a"],"answerExcludes":["fictional-policy-b-draft","fictional-policy-expired"]},
+    {"id":"return-unconfirmed","category":"policy","question":"白菜能退货吗","asOf":"2030-06-01","route":"knowledge","facts":{},"sources":[],"answerIncludes":["政策未确认"],"answerExcludes":["虚构未确认政策","fictional-policy-a"]},
+    {"id":"delivery-expired","category":"policy","question":"番茄配送","asOf":"2030-06-01","route":"knowledge","facts":{},"sources":[],"answerIncludes":["政策未确认"],"answerExcludes":["虚构过期政策","fictional-policy-expired"]},
+    {"id":"storage-expired","category":"policy","question":"番茄怎么保存","asOf":"2031-01-01","route":"knowledge","facts":{},"sources":[],"answerIncludes":["资料不足"],"answerExcludes":["fictional-storage-a"]},
+    {"id":"mixed-price-storage","category":"mixed","question":"番茄多少钱，怎么保存","asOf":"2030-06-01","route":"mixed","facts":{"tomato":"available"},"sources":["fictional-storage-a","fictional-storage-a-extra"],"answerIncludes":["12.00 CNY"]},
+    {"id":"mixed-alias-return","category":"mixed","question":"西红柿多少钱，能退货吗","asOf":"2030-06-01","route":"mixed","facts":{"tomato":"available"},"sources":["fictional-policy-a"],"answerIncludes":["12.00 CNY"]},
+    {"id":"mixed-two-products","category":"mixed","question":"番茄多少钱，白菜怎么保存","asOf":"2030-06-01","route":"mixed","facts":{"tomato":"available"},"sources":["fictional-storage-b"],"answerIncludes":["12.00 CNY"],"answerExcludes":["测试容器 A"]},
+    {"id":"mixed-unknown-second","category":"isolation","question":"番茄多少钱，菠菜冷藏","asOf":"2030-06-01","route":"catalog","facts":{"tomato":"available"},"sources":[],"answerIncludes":["12.00 CNY","商品未识别"],"answerExcludes":["测试容器 A","fictional-global"]},
+    {"id":"mixed-ambiguous-followup","category":"isolation","question":"番茄多少钱，白菜有货吗，怎么保存","asOf":"2030-06-01","route":"catalog","facts":{"tomato":"available","cabbage":"unavailable"},"sources":[],"answerIncludes":["归属不明确"],"answerExcludes":["fictional-storage-a","fictional-storage-b"]},
+    {"id":"mixed-ambiguous-clause","category":"isolation","question":"番茄和白菜的价格以及保存方法","asOf":"2030-06-01","route":"knowledge","facts":{},"sources":[],"answerIncludes":["对应关系不明确"],"answerExcludes":["12.00 CNY","fictional-storage-a","fictional-storage-b"]},
+    {"id":"mixed-two-storage-scopes","category":"isolation","question":"番茄怎么保存，白菜怎么保存","asOf":"2030-06-01","route":"knowledge","facts":{},"sources":["fictional-storage-a","fictional-storage-a-extra","fictional-storage-b"],"answerExcludes":["fictional-global"]},
+    {"id":"english-storage","category":"knowledge","question":"how to store tomato","asOf":"2030-06-01","route":"knowledge","facts":{},"sources":["fictional-storage-a","fictional-storage-a-extra"],"answerExcludes":["fictional-global"]}
+  ]
+}

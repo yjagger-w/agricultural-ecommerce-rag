@@ -11,6 +11,7 @@
     "check": "node scripts/check.js",
     "import": "node scripts/import.js",
     "benchmark": "node scripts/benchmark.js",
+    "evaluate": "node --require ./test/offline-guard.cjs scripts/evaluate-domain.js",
     "scan": "node scripts/scan-staged.js"
   }
 }
