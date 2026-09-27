@@ -61,6 +61,4 @@ npm start
 
 离线测试使用 provider/fetch stub，禁止外部 HTTP 和 fetch，仅 HTTP 集成测试使用本机回环连接。验证结果及独立基准见 [验收记录](docs/validation.md)，简历措辞见 [项目描述](docs/resume-description.md)。
 
-已移除桌面、录屏、音频、转写、个人 Profile、时间线、快捷键与窗口功能。本版未提供演示页面，以 HTTP API 为最小接口。敏感字段与路径检测是有限的技术防护，不能替代业务资料授权确认、人工脱敏或正式隐私审计。
-
 本项目采用 GPL-3.0-only，修改与第三方作者声明见 [许可声明](THIRD_PARTY_NOTICES.md)。无担保；发布源码时需保留 LICENSE 和作者声明。
